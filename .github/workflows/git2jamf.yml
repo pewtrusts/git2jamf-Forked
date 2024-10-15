@@ -14,6 +14,6 @@ jobs:
         uses: pewtrusts/endpointEngineering@master
         with: 
           jamf_url: ${{ secrets.jamf_test_url }}
-          jamf_username: ${{ secrets.jamf_test_username }}
-          jamf_password: ${{ secrets.jamf_test_password }}
+          jamf_username: ${{ secrets.jamf_test_clientid }}
+          jamf_password: ${{ secrets.jamf_test_clientsecret }}
           script_dir: 'Jamf/macOS/scripts'
