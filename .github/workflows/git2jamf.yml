@@ -1,0 +1,19 @@
+name: git2jamf_test
+on:
+  push:
+    branches: 
+      - test
+jobs:
+  jamf_scripts:
+    runs-on: ubuntu-latest
+    name: git2jamf
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: git2jamf
+        uses: pewtrusts/endpointEngineering@master
+        with: 
+          jamf_url: ${{ secrets.jamf_test_url }}
+          jamf_username: ${{ secrets.jamf_test_username }}
+          jamf_password: ${{ secrets.jamf_test_password }}
+          script_dir: 'Jamf/macOS/scripts'
